@@ -1,0 +1,18 @@
+<h1>Hello word!</h1>
+
+<div class="container">
+  <p>Mise a jour: {{ lastUpdate | date}}</p>
+  <div class="col-xs-12">
+    <h2>Mes apareils</h2>
+    <ul class="list-group">
+      <app-appareil *ngFor="let appareil of appareils"
+      [appareilName]="appareil.name" [appareilStatus]="appareil.status"></app-appareil>
+      
+
+    </ul>
+  </div>
+  <div>
+    <button type="button" class="btn btn-success" [disabled]="!isAuth" (click)="onAllume()">Tout allume!</button>
+  </div>
+  
+</div>
